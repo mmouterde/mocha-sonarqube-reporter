@@ -1,0 +1,28 @@
+{
+  "name": "mocha-sonarqube-reporter",
+  "version": "1.0.0",
+  "description": "mocha reporter for sonar (>6)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmouterde/mocha-sonarqube-reporter.git"
+  },
+  "keywords": [
+    "mocha",
+    "sonar",
+    "reporter"
+  ],
+  "author": "mmouterde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmouterde/mocha-sonarqube-reporter/issues"
+  },
+  "homepage": "https://github.com/mmouterde/mocha-sonarqube-reporter#readme",
+  "dependencies": {
+    "mkdirp": "0.5.1",
+    "xml-escape": "1.1.0"
+  }
+}
