@@ -1,3 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
 /.idea/
 /mocha-sonarqube-reporter.iml
+/node_modules/

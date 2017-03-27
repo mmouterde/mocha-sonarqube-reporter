@@ -6,18 +6,29 @@ const path = require("path");
 const mkdirp = require("mkdirp");
 const xmlescape = require('xml-escape');
 
-module.exports = function (runner) {
+module.exports = function (runner, options) {
 
     var stack = {};
     var title, fd;
-    var root = process.cwd();
-    var filePath = process.env.GUNIT_FILE || root + "/gunit.xml";
     var stackF;
+    var root = process.cwd();
+    var filePath = "./xunit.xml";
+
+    //get output file option if any
+    if (options && options.reporterOptions && options.reporterOptions.output) {
+        mkdirp.sync(path.dirname(options.reporterOptions.output));
+        filePath = options.reporterOptions.output;
+    }
+
+    //remove old output file if any
     if (fs.existsSync(filePath)) {
         fs.unlinkSync(filePath);
     }
+    //create outputdir if neeede
     mkdirp.sync(path.dirname(filePath));
+    //Init ouptut file
     fd = fs.openSync(filePath, 'w');
+
     runner.on('test end', function (test) {
         var file = getFilePath(test);
         file = file.substr(file.indexOf(root) + root.length + 1);

@@ -17,20 +17,22 @@ Install and save to your `devDependencies`
 
 ```
 npm install --save-dev mocha-sonarqube-reporter
-mocha --reporter mocha-sonarqube-reporter testFolder
+mocha --reporter mocha-sonarqube-reporter testFolder --reporter-options output=xunit.xml
 ```
 
 On **mocha-test** for use with grunt
 
 	mochaTest: {
-		coverage: {
+		sonar: {
 			options: {
 				reporter: 'mocha-sonarqube-reporter',
 				quiet: true,
-				captureFile: 'unit-tests.xml'
+				reporterOptions:{
+				  output : 'unit-tests.xml' // default to ./xunit.xml
+				}
 			},
 			src: [
-				'test.js'
+				'app/**/*.spec.js'
 			]
 		}
 	}
