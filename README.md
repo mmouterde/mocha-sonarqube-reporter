@@ -29,6 +29,7 @@ On **mocha-test** for use with grunt
 				quiet: true,
 				reporterOptions:{
 				  output : 'unit-tests.xml' // default to ./xunit.xml
+				  useFullFilePath: 'true' // default to 'false'. Uses full test file paths in the report.
 				}
 			},
 			src: [

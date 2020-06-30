@@ -12,12 +12,18 @@ module.exports = function (runner, options) {
     var title, fd;
     var stackF;
     var root = process.cwd();
+    var useFullFilePath = false;
     var filePath = "./xunit.xml";
 
     //get output file option if any
-    if (options && options.reporterOptions && options.reporterOptions.output) {
-        mkdirp.sync(path.dirname(options.reporterOptions.output));
-        filePath = options.reporterOptions.output;
+    if (options && options.reporterOptions) {
+        if (options.reporterOptions.output) {
+            mkdirp.sync(path.dirname(options.reporterOptions.output));
+            filePath = options.reporterOptions.output;
+        }
+        if (options.reporterOptions.useFullFilePath) {
+            useFullFilePath = true;
+        }
     }
 
     //remove old output file if any
@@ -31,7 +37,9 @@ module.exports = function (runner, options) {
 
     runner.on('test end', function (test) {
         var file = getFilePath(test);
-        file = file.substr(file.indexOf(root) + root.length + 1);
+        if (!useFullFilePath) {
+            file = file.substr(file.indexOf(root) + root.length + 1);
+        }
         stackF = stack[file];
         if (!stackF) {
             stackF = stack[file] = [];
