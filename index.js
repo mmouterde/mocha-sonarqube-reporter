@@ -43,7 +43,8 @@ module.exports = function (runner, options) {
         var file = getFilePath(test);
         if (!useFullFilePath) {
             file = file.substr(file.indexOf(root) + root.length + 1);
-        } else if (pathPrefix) {
+        }
+        if (pathPrefix) {
             file = path.concat(pathPrefix, file);
         }
         stackF = stack[file];
