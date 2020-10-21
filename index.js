@@ -45,7 +45,7 @@ module.exports = function (runner, options) {
             file = file.substr(file.indexOf(root) + root.length + 1);
         }
         if (pathPrefix) {
-            file = path.concat(pathPrefix, file);
+            file = path.join(pathPrefix, file);
         }
         stackF = stack[file];
         if (!stackF) {
