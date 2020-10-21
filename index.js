@@ -25,8 +25,8 @@ module.exports = function (runner, options) {
         if (options.reporterOptions.useFullFilePath) {
             useFullFilePath = true;
         }
-        if (options.reporterOptions.useFullFilePath) {
-            pathPrefix = options.reporterOptions.useFullFilePath;
+        if (options.reporterOptions.pathPrefix) {
+            pathPrefix = options.reporterOptions.pathPrefix;
         }
     }
 
