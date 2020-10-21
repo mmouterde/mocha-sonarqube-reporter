@@ -30,6 +30,7 @@ On **mocha-test** for use with grunt
 				reporterOptions:{
 				  output : 'unit-tests.xml' // default to ./xunit.xml
 				  useFullFilePath: 'true' // default to 'false'. Uses full test file paths in the report.
+				  pathPrefix: '/custom/root/directory'  // default to null. Add custom path prefix in the report to match sonar configuration.
 				}
 			},
 			src: [

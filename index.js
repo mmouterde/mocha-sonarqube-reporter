@@ -13,6 +13,7 @@ module.exports = function (runner, options) {
     var stackF;
     var root = process.cwd();
     var useFullFilePath = false;
+    var pathPrefix;
     var filePath = "./xunit.xml";
 
     //get output file option if any
@@ -23,6 +24,9 @@ module.exports = function (runner, options) {
         }
         if (options.reporterOptions.useFullFilePath) {
             useFullFilePath = true;
+        }
+        if (options.reporterOptions.pathPrefix) {
+            pathPrefix = options.reporterOptions.pathPrefix;
         }
     }
 
@@ -39,6 +43,9 @@ module.exports = function (runner, options) {
         var file = getFilePath(test);
         if (!useFullFilePath) {
             file = file.substr(file.indexOf(root) + root.length + 1);
+        }
+        if (pathPrefix) {
+            file = path.join(pathPrefix, file);
         }
         stackF = stack[file];
         if (!stackF) {
