@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/mmouterde/mocha-sonarqube-reporter#readme",
   "dependencies": {
-    "mkdirp": "0.5.5",
+    "mkdirp": "^1.0.4",
     "xml-escape": "1.1.0"
   }
 }
