@@ -1,6 +1,6 @@
 {
-  "name": "mocha-sonarqube-reporter",
-  "version": "1.0.3",
+  "name": "mocha-qube-reporter",
+  "version": "2.0.0",
   "description": "mocha reporter for sonar (>6)",
   "main": "index.js",
   "scripts": {
