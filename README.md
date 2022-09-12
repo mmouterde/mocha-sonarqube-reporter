@@ -1,4 +1,7 @@
 # mocha-sonarqube-reporter
+## Disclaimer
+This package is a fork of mocha-sonarqube-reporter. We decide to fork and publish this package because it seems all the open Pull Requests does not have activity in the last years. We acknowledgement the great job of the contributors of mocha-sonarqube-reporter <3.
+
 
 mocha unit test reporter for sonar (>6.2)
 
